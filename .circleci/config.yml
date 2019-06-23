@@ -30,4 +30,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn build
-      - run: yarn run deploy
+      - run:
+        command: |
+          git config --global user.username connoreggleston
+          git config --global user.password $GH_TOKEN
+          yarn run deploy

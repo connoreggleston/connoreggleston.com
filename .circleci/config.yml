@@ -31,7 +31,7 @@ jobs:
 
       - run: yarn build
       - run:
-        command: |
-          git config --global user.username connoreggleston
-          git config --global user.password $GH_TOKEN
-          yarn run deploy
+          command: |
+            git config --global user.username connoreggleston
+            git config --global user.password $GH_TOKEN
+            yarn run deploy

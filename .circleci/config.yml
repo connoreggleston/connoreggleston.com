@@ -12,7 +12,7 @@ jobs:
       - image: circleci/node:10
     working_directory: ~/repo
     environment:
-      - SOURCE_BRANCH: circle_ci_integration
+      - SOURCE_BRANCH: master
       - TARGET_BRANCH: gh-pages
 
     steps:

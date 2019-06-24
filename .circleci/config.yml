@@ -13,12 +13,14 @@ jobs:
     working_directory: ~/repo
     environment:
       - SOURCE_BRANCH: master
-      - TARGET_BRANCH: gh-pages
 
     steps:
+
+      # set ssh key with write access back to github
       - add_ssh_keys:
           fingerprints:
             - "56:d9:d8:d9:bd:21:71:01:87:22:0b:3d:52:01:d0:23"
+
       - checkout
 
       # Download and cache dependencies

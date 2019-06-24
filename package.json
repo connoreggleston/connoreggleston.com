@@ -18,6 +18,8 @@
     "styled-components": "^4.3.2"
   },
   "scripts": {
+    "prebuild": "yarn css",
+    "prestart": "yarn css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "concurrently -r -k \"yarn css:watch\" \"react-scripts start\"",

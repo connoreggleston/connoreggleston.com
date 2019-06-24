@@ -4,16 +4,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "chokidar-cli": "^1.2.2",
+    "concurrently": "^4.1.0",
     "gh-pages": "^2.0.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "concurrently -r -k \"yarn css:watch\" \"react-scripts start\"",
     "build": "react-scripts build",
+    "css": "node-sass src/css/index.scss src/css/app.min.css --output-style compressed",
+    "css:watch": "chokidar \"src/css/*.scss\" -c \"yarn css\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

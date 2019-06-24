@@ -11,6 +11,9 @@
 # production
 /build
 
+# auto-generated, minified CSS
+src/css/app.min.css
+
 # misc
 .DS_Store
 .env.local
